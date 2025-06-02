@@ -12,7 +12,7 @@ This project is a Kotlin-based solution for the Volkwagen Digital Hub Challenge.
 
 1. Clone the repository:
    ```sh
-   git clone <repo-url>
+   git clone git@github.com:frablamo/Volkwagen-Digital-Hub-Challenge.git
    cd Volkwagen-Digital-Hub-Challenge
    ```
 
