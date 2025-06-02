@@ -1,16 +1,19 @@
-package org.example
+package volkwagen.cleaningrobots
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import volkwagen.cleaningrobots.infrastructure.cli.model.CleaningRobotCLI
+import volkwagen.cleaningrobots.infrastructure.cli.model.Instructions
+
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
-
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+    val robotCli = CleaningRobotCLI()
+    println("Hello Volkwagen Digital Hub Reviewers")
+    println("-------------------------------------")
+    println("Please enter the input by stdin. A blank line will be considered end of instructions and start the app")
+    val input = mutableListOf<String>()
+    var line = readlnOrNull()
+    while (!line.isNullOrBlank()) {
+        input.add(line)
+        line = readlnOrNull()
     }
+    println(" \nOutput:")
+    robotCli.start(Instructions(input)).forEach(::println)
 }
